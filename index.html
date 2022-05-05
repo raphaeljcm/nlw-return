@@ -11,15 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- SCROLLREVEAL LIB -->
+  <script src="https://unpkg.com/scrollreveal" defer></script>
   <script src="./main.js" defer></script>
 
   <title>DoctorCare</title>
 </head>
 
-<body onscroll="onScroll()">
+<body>
   <nav id="navigation">
     <div class="wrapper">
-      <a href="#" class="logo" tabindex="1">
+      <a href="#home" class="logo" tabindex="1" onclick="closeMenu()">
         <svg width="133" height="18" viewBox="0 0 133 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 17.088V0.287999H5.16C8.12 0.287999 10.296 1.04 11.688 2.544C13.096 4.048 13.8 6.112 13.8 8.736C13.8 11.312 13.096 13.352 11.688 14.856C10.296 16.344 8.12 17.088 5.16 17.088H0ZM2.016 15.408H5.112C6.744 15.408 8.04 15.144 9 14.616C9.976 14.072 10.672 13.304 11.088 12.312C11.504 11.304 11.712 10.112 11.712 8.736C11.712 7.328 11.504 6.12 11.088 5.112C10.672 4.104 9.976 3.328 9 2.784C8.04 2.24 6.744 1.968 5.112 1.968H2.016V15.408Z"
@@ -56,9 +58,9 @@
 
       <div class="menu">
         <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Sobre</a></li>
+          <li><a href="#home" onclick="closeMenu()">Início</a></li>
+          <li><a href="#services" onclick="closeMenu()">Serviços</a></li>
+          <li><a href="#about" onclick="closeMenu()">Sobre</a></li>
         </ul>
 
         <a class="button" href="#">Agende sua consulta</a>
@@ -117,28 +119,126 @@
     </div>
   </nav>
 
-  <header class="wrapper">
-    <h4>BOAS-VINDAS A DOCTORCARE 👋</h4>
-    <h1>Assistência médica simplificada para todos</h1>
-    <p>Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a
-      longo prazo.</p>
-    <button><img src="./assets/whatsapp.svg" alt="ícone do whatsapp"> Agende sua consulta</button>
-    <img src="./assets/woman-photo.png" alt="mulher negra vestindo um moletom verde e sorrindo">
-
-    <div class="stats">
-      <div class="stat">
-        <h3>+3.500</h3>
-        <p>Pacientes atendidos</p>
+  <section id="home">
+    <div class="wrapper">
+      <header>
+        <h4>BOAS-VINDAS A DOCTORCARE 👋</h4>
+        <h1>Assistência médica simplificada para todos</h1>
+      </header>
+      
+      <div class="content">
+        <p>Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a
+          longo prazo.</p>
+        <button><img src="./assets/whatsapp.svg" alt="ícone do whatsapp"> Agende sua consulta</button>
+        <img src="./assets/woman-photo.png" alt="mulher negra vestindo um moletom verde e sorrindo">
       </div>
-      <div class="stat">
-        <h3>+15</h3>
-        <p>Especialistas disponíveis</p>
-      </div>
-      <div class="stat">
-        <h3>+10</h3>
-        <p>Anos no mercado</p>
+  
+      <div class="stats">
+        <div class="stat">
+          <h3>+3.500</h3>
+          <p>Pacientes atendidos</p>
+        </div>
+        <div class="stat">
+          <h3>+15</h3>
+          <p>Especialistas disponíveis</p>
+        </div>
+        <div class="stat">
+          <h3>+10</h3>
+          <p>Anos no mercado</p>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
+
+  <section id="services">
+    <div class="wrapper">
+      <header>
+        <h4>Serviços</h4>
+        <h2>Como podemos ajudá-lo a se sentir melhor</h2>
+      </header>
+
+      <div class="content cards">
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Problemas digestivos</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Saúde Hormonal</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Bem-estar mental</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Cuidados Pediátricos</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Autoimune e Inflamação</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+        <div class="card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="12" fill="#DCE9E2" />
+            <path d="M17.091 8.18182L10.091 15.1818L6.90918 12" stroke="#00856F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          
+          <h3>Saúde do Coração</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, blanditiis laudantium tempore enim quae autem! Qui aliquam tempora maxime esse quis fuga necessitatibus voluptate deleniti labore, porro voluptates minus et?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrapper">
+      <header>
+        <h4>Sobre nós</h4>
+        <h2>Entenda quem somos e por que existimos</h2>
+      </header>
+
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis exercitationem sint dolore rem beatae, itaque, illum possimus, libero deserunt sunt id quidem? Est, laudantium molestiae delectus odit illo temporibus? Maxime?
+          Temporibus ut blanditiis suscipit eaque distinctio a totam earum accusamus laborum consectetur inventore veritatis nobis quae labore enim beatae fugiat in magni culpa eius, voluptatum vitae. Soluta quia dolor sapiente?
+          Beatae ad excepturi eveniet rem unde nostrum quas neque? Deleniti nesciunt fuga vitae velit maiores magnam facere dolor ex sit id, nihil fugit quibusdam porro, ipsam sequi, natus voluptates totam.
+          Reiciendis illum eveniet, officiis tenetur quae rerum veniam vel cumque labore corporis? Iste quas, quia inventore officiis quod aliquam voluptatibus iusto sequi, ut cupiditate porro at velit? Expedita, voluptas fugiat.
+        </p>
+        <img src="./assets/happy-doctor-with-patients.png" alt="doutor feliz segurando uma prancheta com pacientes">
+      </div>
+    </div>
+  </section>
 </body>
 </html>
