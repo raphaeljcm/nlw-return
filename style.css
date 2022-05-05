@@ -12,6 +12,7 @@
 
   --brand-beige: hsl(38, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
+  --brand-btn-hover: hsl(170, 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -97,14 +98,34 @@ section .content p {
   padding-inline: 2.4rem;
 }
 .button {
+  background-color: var(--primary-color);
+  
+  border: none;
   border-radius: 4rem;
+  
+  color: white;
+  font-size: 1.4rem;
   font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 2.3rem;
   text-transform: uppercase;
+  line-height: 1.8rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
 
-  display: inline-block;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 6rem;
   padding: 1.6rem 3.2rem;
+}
+.button:hover {
+  background-color: var(--brand-btn-hover);
+  transition: background-color 200ms;
+}
+.button.white {
+  background-color: white;
+  color: var(--primary-color);
 }
 /* --- NAVIGATION --- */
 nav {
@@ -144,18 +165,27 @@ body.menu-expanded {
 body.menu-expanded > :not(nav) { /* all the elements will have display hidden, only my nav not */
   visibility: hidden;
 }
+body.menu-expanded .open-menu {
+  position: static;
+}
+body.menu-expandex .close-menu {
+  position: absolute;
+}
 .menu, 
 .close-menu,
 body.menu-expanded .open-menu {
   visibility: hidden;
   opacity: 0;
-}
+}  
 body.menu-expanded .menu,
 body.menu-expanded .close-menu {
   visibility: visible;
   opacity: 1;
 }
 body .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transform: translateY(100%);
 }
 body.menu-expanded .menu {
@@ -177,7 +207,7 @@ body.menu-expanded .menu {
   flex-direction: column;
   gap: 4.8rem;
 
-  margin-top: 6rem;
+  margin-top: 8rem;
 
   font-weight: 700;
   font-size: 2.4rem;
@@ -186,11 +216,11 @@ body.menu-expanded .menu {
 .menu ul li a {
   color: white;
 }
-.menu .button {
-  background-color: white;
-  color: var(--primary-color);
+.menu .button.white {
   margin-top: 4.8rem;
   margin-bottom: 8rem;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
 }
 .social-links {
   display: flex;
@@ -202,6 +232,8 @@ body.menu-expanded nav .logo,
 body.menu-expanded nav button {
   position: relative;
   z-index: 10;
+
+  margin-right: 2rem;
 }
 body.menu-expanded nav .logo path {
   fill: white;
@@ -232,29 +264,6 @@ body.menu-expanded nav button path {
   color: var(--paragraph);
 
   margin-bottom: 3.2rem;
-}
-#home button {
-  background-color: var(--primary-color);
-
-  border: none;
-  border-radius: 4rem;
-
-  margin-bottom: 6rem;
-
-  height: 6.2rem;
-  width: 26.3rem;
-
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-
-  margin-inline: auto; /* left and right */
 }
 #home div > img {
   width: 26.4rem;
@@ -321,4 +330,54 @@ body.menu-expanded nav button path {
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+/* --- CONTACT --- */
+#contact {
+  text-align: left;
+}
+#contact header {
+  margin-bottom: 3.2rem;
+}
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+#contact .button {
+  margin-top: 3.2rem;
+  margin-inline: 0;
+}
+/* --- FOOTER --- */
+footer {
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+
+  text-align: left;
+
+  color: white;
+}
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+footer .logo path {
+  fill: white;
+}
+footer p {
+  color: var(--brand-beige);
+  line-height: 2;
+
+  margin-bottom: 3.2rem;
+}
+footer .social-links {
+  justify-content: flex-start;
 }
