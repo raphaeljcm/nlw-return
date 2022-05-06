@@ -1,9 +1,20 @@
-function onScroll() {
- window.addEventListener('scroll', () => scrollY > 0 ? navigation.classList.add('scroll') : navigation.classList.remove('scroll'));
-}
+const handleScroll = {
+  onScroll: function() {
+    this.showNavAndBackToTopOnScroll();
+  },
+  showNavAndBackToTopOnScroll: () => {
+    window.addEventListener('scroll', () => {
+      scrollY > 0 ? navigation.classList.add('scroll') : navigation.classList.remove('scroll');
+      scrollY > 2700 ? backToTop.classList.add('show') : backToTop.classList.remove('show');
+      scrollY > 5250 ? backToTop.classList.add('contact') : backToTop.classList.remove('contact');
+    }); 
+  }
+} 
+
 function openMenu() {
   document.body.classList.add('menu-expanded');
 }
+
 function closeMenu() {
   document.body.classList.remove('menu-expanded');
 }
@@ -26,7 +37,7 @@ ScrollReveal({
 );
 
 function init() {
-  onScroll();
+  handleScroll.onScroll();
 }
 
 window.onload = init;

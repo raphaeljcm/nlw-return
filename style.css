@@ -6,13 +6,15 @@
 }
 :root {
   /* VARIABLES */ 
-  --primary-color: hsl(170, 100%, 26%);
+  --hue: 170;
+
+  --primary-color: hsl(var(--hue), 100%, 26%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
 
   --brand-beige: hsl(38, 100%, 97%);
-  --brand-light: hsl(148, 23%, 89%);
-  --brand-btn-hover: hsl(170, 100%, 14%);
+  --brand-light: hsl(calc(var(--hue) - 22) , 23%, 89%);
+  --brand-btn-hover: hsl(var(--hue), 100%, 14%);
 
   --bg-light: hsl(180, 14%, 97%);
 
@@ -127,6 +129,34 @@ section .content p {
   background-color: white;
   color: var(--primary-color);
 }
+.button.white:hover {
+  background-color: var(--primary-color);
+  color: white;
+
+  filter: brightness(1.3);
+}
+/* --- CUSTOM COLORS --- */ 
+#services .card svg circle {
+  fill: var(--brand-light);
+}
+#navigation button.open-menu path[stroke*="#00856F"],
+#backToTop.show.contact svg path, 
+#contact li path {
+  stroke: var(--primary-color);
+}
+#navigation .logo path[fill*="#00856F"],
+#backToTop.show svg circle {
+  fill: var(--primary-color);
+}
+#navigation.scroll button.open-menu path[stroke*="#00856F"],
+#backToTop.show svg path {
+  stroke: white;
+}
+body.menu-expanded #navigation .logo path,
+#navigation.scroll .logo path,
+#backToTop.show.contact svg circle {
+  fill: white;
+}
 /* --- NAVIGATION --- */
 nav {
   display: flex;
@@ -146,12 +176,6 @@ nav .wrapper {
 }
 nav.scroll {
   background-color: var(--primary-color);
-}
-nav.scroll .logo path {
-  fill: white;
-}
-nav.scroll button path {
-  stroke: white;
 }
 nav button {
   background: none;
@@ -380,4 +404,22 @@ footer p {
 }
 footer .social-links {
   justify-content: flex-start;
+}
+/* --- BACK TO TOP --- */
+#backToTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(100%);
+  transition: all 200ms;
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
 }
