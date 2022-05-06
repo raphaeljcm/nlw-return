@@ -4,9 +4,17 @@ const handleScroll = {
   },
   showNavAndBackToTopOnScroll: () => {
     window.addEventListener('scroll', () => {
+      const navHeight = navigation.scrollHeight;
+      const homeHeight = home.scrollHeight;
+      const servicesHeight = services.scrollHeight;
+      const aboutHeight = about.scrollHeight;
+      const contactHeight = contact.scrollHeight;
+
+      const scrollArrivedInFooter = ((homeHeight + servicesHeight + aboutHeight + contactHeight) - navHeight);
+
       scrollY > 0 ? navigation.classList.add('scroll') : navigation.classList.remove('scroll');
       scrollY > 2700 ? backToTop.classList.add('show') : backToTop.classList.remove('show');
-      scrollY > 5250 ? backToTop.classList.add('contact') : backToTop.classList.remove('contact');
+      scrollY > scrollArrivedInFooter ? backToTop.classList.add('contact') : backToTop.classList.remove('contact');
     }); 
   }
 } 
