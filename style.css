@@ -156,6 +156,9 @@ body.menu-expanded #navigation .logo path,
 #backToTop.show.contact svg circle {
   fill: white;
 }
+#testimonials .testimonial-wrapper svg path {
+  fill: var(--primary-color);
+}
 /* --- NAVIGATION --- */
 nav {
   display: flex;
@@ -374,6 +377,57 @@ body.menu-expanded nav button path {
   margin-top: 3.2rem;
   margin-inline: 0;
 }
+#contact .col-b iframe {
+  width: 100%;
+  height: 30rem;
+}
+/* --- TESTIMONIALS --- */
+#testimonials header h2 {
+  margin-bottom: 2rem;
+}
+#testimonials header p {
+  margin-bottom: 6rem;
+  color: var(--paragraph);
+}
+#testimonials .testimonial-wrapper {
+  background-color: var(--brand-beige);
+  padding: 3.2rem;
+  margin-bottom: 3.2rem;
+  text-align: left;
+  border-radius: .4rem;
+}
+#testimonials .testimonial-wrapper svg {
+  margin-bottom: 2rem;
+}
+#testimonials .testimonial-wrapper p {
+  color: var(--paragraph);
+}
+#testimonials .testimonial-wrapper .profile {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+#testimonials .testimonial-wrapper .profile p {
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 2.8rem;
+}
+#testimonials .wrapper:last-of-type {
+  padding-top: 8rem;
+}
+#testimonials .wrapper:last-of-type h3 {
+  color:  hsla(105, 100%, 5%);
+  margin-bottom: 4.8rem;
+  font-size: 2.4rem;
+}
+#testimonials .wrapper:last-of-type .companies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
 /* --- FOOTER --- */
 footer {
   background-color: var(--primary-color);
@@ -470,7 +524,7 @@ footer .social-links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 63%;
+    width: 71%;
   } 
   nav#navigation .menu ul:nth-child(1) {
     display: flex;
@@ -612,13 +666,36 @@ footer .social-links {
   #about .content p {
     margin-bottom: 0;
   }
+  /* --- TESTIMONIALS --- */
+  #testimonials .wrapper:first-of-type {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+  }
+  #testimonials header {
+    text-align: left;
+  }
+  #testimonials .wrapper:last-of-type {
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+  }
+  #testimonials .wrapper:last-of-type .companies {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   /* --- CONTACT --- */
   #contact .wrapper {
-    grid-template-columns: 1fr 57.5rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'a b';
+  }
+  #contact .col-a {
+    align-self: center;
   }
   #contact h2 {
     width: 40.4rem;
+  }
+  #contact .col-b iframe {
+    width: 58rem;
+    height: 69rem;
   }
   /* --- FOOTER --- */
   footer {

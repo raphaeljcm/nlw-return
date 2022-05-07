@@ -4,6 +4,7 @@ const handleScroll = {
     this.activateMenuAtCurrentSection(home);
     this.activateMenuAtCurrentSection(services);
     this.activateMenuAtCurrentSection(about);
+    this.activateMenuAtCurrentSection(testimonials);
     this.activateMenuAtCurrentSection(contact);
   },
   showNavAndBackToTopOnScroll: () => {
