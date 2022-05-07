@@ -431,8 +431,18 @@ footer .social-links {
     width: min(112rem, 100%);
     display: grid;
   }
+  .col-a {
+    grid-area: a;
+  }
+  .col-b {
+    grid-area: b;
+  }
   section {
     padding-block: 16rem;
+  }
+  section header h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
   }
   /* --- NAVIGATION --- */
   /* RESET */
@@ -502,8 +512,10 @@ footer .social-links {
   nav#navigation .menu li a {
     transition: opacity .4s;
   }
-  nav#navigation .menu li a:hover,
-  nav#navigation.scroll .menu li a:hover {
+  nav#navigation .menu ul li a:hover,
+  nav#navigation .menu ul li a.active,
+  nav#navigation.scroll .menu ul li a:hover,
+  nav#navigation.scroll .menu ul li a.active {
     opacity: 1;
     font-weight: 700;
   }
@@ -523,7 +535,8 @@ footer .social-links {
   nav#navigation.scroll .menu li a::after {
     background-color: white;
   }
-  nav#navigation .menu li a:hover::after {
+  nav#navigation .menu li a:hover::after,
+  nav#navigation .menu li a.active::after {
     width: calc(100% + 1rem);
   }
   nav#navigation.scroll .menu a.button:hover {
@@ -545,7 +558,6 @@ footer .social-links {
     'stats stats';
   }
   #home .col-a {
-    grid-area: a;
     text-align: left;
     align-self: center;
   }
@@ -554,9 +566,6 @@ footer .social-links {
   }
   #home .col-a .content p {
     font-size: 1.8rem;
-  }
-  #home .col-b {
-    grid-area: b;
   }
   #home .stats {
     grid-area: stats;
@@ -576,5 +585,54 @@ footer .social-links {
   }
   #home .col-b img {
     width: 42rem;
+  }
+  /* --- SERVICES --- */
+  #services h2 {
+    width: 50rem;
+    margin-inline: auto;
+  }
+  #services .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  #services .cards .card {
+    width: 30%;
+    flex-grow: 1;
+  }
+  /* --- ABOUT ---*/
+  #about .wrapper {
+    grid-template-columns: 48rem 1fr;
+    grid-template-areas: 'b a';
+    gap: 6.7rem;
+  }
+  #about .col-a {
+    align-self: center;
+  }
+  #about .content p {
+    margin-bottom: 0;
+  }
+  /* --- CONTACT --- */
+  #contact .wrapper {
+    grid-template-columns: 1fr 57.5rem;
+    grid-template-areas: 'a b';
+  }
+  #contact h2 {
+    width: 40.4rem;
+  }
+  /* --- FOOTER --- */
+  footer {
+    padding-block: 8rem;
+  }
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'a b';
+  }
+  footer .col-a {
+    align-self: center;
+  }
+  footer .col-b {
+    align-self: center;
+    justify-self: flex-end;
   }
 }
