@@ -159,6 +159,12 @@ body.menu-expanded #navigation .logo path,
 #testimonials .testimonial-wrapper svg path {
   fill: var(--primary-color);
 }
+#testimonials .wrapper:last-of-type svg path {
+  fill: var(--primary-color);
+}
+#testimonials .wrapper:last-of-type svg[aria-label*="logo linkedin"] path:last-of-type {
+  fill: white;
+} 
 /* --- NAVIGATION --- */
 nav {
   display: flex;
